@@ -4,8 +4,32 @@
     <input type="text" v-model="email" placeholder="Email"><br>
     <input type="password" v-model="password" placeholder="Password"><br>
     <button @click="login">Sign in</button>
+    <p>
+      <router-link to="/register">Register</router-link>
+    </p>
+    <span>
+        <router-link to="/login">login</router-link>
+    </span>
   </div>
 </template>
+
+<script>
+import { emailLogin } from '../service/firebase.js'
+export default {
+  name: "login",
+  data() {
+    return {
+      email: "",
+      password: ""
+    };
+  },
+  methods: {
+      login: function () {
+          emailLogin(this.email, this.password)
+      }
+  }
+};
+</script>
 
 <style scoped>
 .login {
