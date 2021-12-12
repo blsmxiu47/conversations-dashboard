@@ -14,7 +14,8 @@
 </template>
 
 <script>
-import { emailLogin } from '../service/firebase.js'
+import { auth } from '../service/firebase.js'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 export default {
   name: "login",
   data() {
@@ -25,7 +26,14 @@ export default {
   },
   methods: {
       login: function () {
-          emailLogin(this.email, this.password)
+        signInWithEmailAndPassword(auth, this.email, this.password)
+          .then(
+            () => {
+                this.$router.replace("home");
+            })
+            .catch(err => {
+                alert(err.message);}
+        )
       }
   }
 };

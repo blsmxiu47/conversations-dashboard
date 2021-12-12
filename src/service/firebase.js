@@ -1,8 +1,14 @@
 // import firebase from "firebase/compat/app"
+
+
+// TODO: Deal with 'auth component not yet registered' firebase error. keep in mind we're using Vue 3 and firebase v9
+
+
+
 import { initializeApp } from 'firebase/app'
-import { getAuth, GoogleAuthProvider } from 'firebase/auth'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
-import { signInWithEmailAndPassword, signOut } from 'firebase/auth'
+import { getAuth, GoogleAuthProvider, onAuthStateChanged } from 'firebase/auth'
+// import { createUserWithEmailAndPassword } from 'firebase/auth'
+// import { signInWithEmailAndPassword, signOut } from 'firebase/auth'
 
 import { getDatabase } from 'firebase/database'
 import { getAnalytics } from 'firebase/analytics'
@@ -18,40 +24,43 @@ const firebaseConfig = {
 };
 
 const firebaseApp = initializeApp(firebaseConfig)
-
-export const firebaseAuth = getAuth(firebaseApp)
+console.log(firebaseApp.name)
+console.log('auth: ')
+export const auth = getAuth(firebaseApp) // this results in an Uncaught Error from index.esm2017.js
+onAuthStateChanged(auth, user => { console.log(user)/* check status */ });
+console.log(auth)
 export const firebaseDatabase = getDatabase(firebaseApp)
 export const googleAnalytics = getAnalytics(firebaseApp)
 export const googleProvider = new GoogleAuthProvider()
 
-export const registerUser = function (email, password) {
-    createUserWithEmailAndPassword(firebaseAuth, email, password)
-        .then(
-            () => {
-                this.$router.replace("home");
-            }).catch(err => {
-                alert(err.message);
-            })
-    }
+// export const registerUser = function (email, password) {
+//     createUserWithEmailAndPassword(auth, email, password)
+//         .then(
+//             () => {
+//                 this.$router.replace("home");
+//             }).catch(err => {
+//                 alert(err.message);
+//             })
+//     }
 
-export const emailLogin = function (email, password) {
-    signInWithEmailAndPassword(firebaseAuth, email, password)
-        .then(
-            () => {
-                this.$router.replace("home");
-            })
-            .catch(err => {
-                alert(err.message);}
-        );
-}
+// export const emailLogin = function (email, password) {
+//     signInWithEmailAndPassword(auth, email, password)
+//         .then(
+//             () => {
+//                 this.$router.replace("home");
+//             })
+//             .catch(err => {
+//                 alert(err.message);}
+//         );
+// }
 
-export const logout = function (email, password) {
-    signOut(firebaseAuth, email, password)
-        .then(
-            () => {
-                this.$router.replace("home");
-            })
-            .catch(err => {
-                alert(err.message);}
-        );
-}
+// export const logout = function (email, password) {
+//     signOut(auth, email, password)
+//         .then(
+//             () => {
+//                 this.$router.replace("home");
+//             })
+//             .catch(err => {
+//                 alert(err.message);}
+//         );
+// }

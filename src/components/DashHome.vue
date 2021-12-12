@@ -5,13 +5,21 @@
 </template>
 
 <script>
-import { logout } from '../service/firebase.js'
+import { auth } from '../service/firebase.js'
+import { signOut } from 'firebase/auth'
 
 export default {
     name: 'DashHome',
     methods: {
         logout: function () {
-            logout()
+          signOut(auth, this.email, this.password)
+            .then(
+              () => {
+                this.$router.replace("home");
+              })
+              .catch(err => {
+                alert(err.message);}
+        )
         }
     }
 };

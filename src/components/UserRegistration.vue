@@ -13,7 +13,8 @@
 </template>
 
 <script>
-import { registerUser } from '../service/firebase.js'
+import { auth } from '../service/firebase.js'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
 export default {
   name: "Register",
   data() {
@@ -24,10 +25,16 @@ export default {
   },
   methods: {
       register: function () {
-          registerUser(this.email, this.password)
+        createUserWithEmailAndPassword(auth, this.email, this.password)
+          .then(
+            () => {
+                this.$router.replace("home");
+            }).catch(err => {
+                alert(err.message);
+            })
       }
   }
-};
+}
 </script>
 
 <style scoped>
