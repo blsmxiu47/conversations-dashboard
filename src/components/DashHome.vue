@@ -15,7 +15,7 @@ export default {
           signOut(auth, this.email, this.password)
             .then(
               () => {
-                this.$router.replace("home");
+                this.$router.replace("login");
               })
               .catch(err => {
                 alert(err.message);}
