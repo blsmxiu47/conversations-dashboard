@@ -1,11 +1,21 @@
 <template>
   <div class="register">
     <p>Register</p>
-    <input type="text" v-model="email" placeholder="Email">
+    <input
+      v-model="email"
+      type="text"
+      placeholder="Email"
+    >
     <br>
-    <input type="password" v-model="password" placeholder="Password">
+    <input
+      v-model="password"
+      type="password"
+      placeholder="Password"
+    >
     <br>
-    <button @click="register">Register</button>
+    <button @click="register">
+      Register
+    </button>
     <span>
       <router-link to="/login">login</router-link>
     </span>
@@ -13,28 +23,28 @@
 </template>
 
 <script>
-import { auth } from '../service/firebase.js'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { auth } from "../service/firebase.js";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 export default {
   name: "Register",
   data() {
     return {
       email: "",
-      password: ""
+      password: "",
     };
   },
   methods: {
     register: function () {
       createUserWithEmailAndPassword(auth, this.email, this.password)
-        .then(
-          () => {
-            this.$router.replace("hSome");
-          })
-        .catch(err => {
-          alert(err.message);})
-    }
-  }
-}
+        .then(() => {
+          this.$router.replace("hSome");
+        })
+        .catch((err) => {
+          alert(err.message);
+        });
+    },
+  },
+};
 </script>
 
 <style scoped>
