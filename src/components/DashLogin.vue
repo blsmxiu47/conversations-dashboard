@@ -8,7 +8,7 @@
       <router-link to="/register">Register</router-link>
     </p>
     <span>
-        <router-link to="/login">login</router-link>
+      <router-link to="/login">login</router-link>
     </span>
   </div>
 </template>
@@ -25,16 +25,15 @@ export default {
     };
   },
   methods: {
-      login: function () {
-        signInWithEmailAndPassword(auth, this.email, this.password)
-          .then(
-            () => {
-                this.$router.replace("home");
-            })
-            .catch(err => {
-                alert(err.message);}
-        )
-      }
+    login: function () {
+      signInWithEmailAndPassword(auth, this.email, this.password)
+        .then(
+          () => {
+            this.$router.replace("home");
+          })
+        .catch(err => {
+          alert(err.message);})
+    }
   }
 };
 </script>

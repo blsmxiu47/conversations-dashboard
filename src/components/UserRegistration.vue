@@ -7,7 +7,7 @@
     <br>
     <button @click="register">Register</button>
     <span>
-        <router-link to="/login">login</router-link>
+      <router-link to="/login">login</router-link>
     </span>
   </div>
 </template>
@@ -24,15 +24,15 @@ export default {
     };
   },
   methods: {
-      register: function () {
-        createUserWithEmailAndPassword(auth, this.email, this.password)
-          .then(
-            () => {
-                this.$router.replace("home");
-            }).catch(err => {
-                alert(err.message);
-            })
-      }
+    register: function () {
+      createUserWithEmailAndPassword(auth, this.email, this.password)
+        .then(
+          () => {
+            this.$router.replace("hSome");
+          })
+        .catch(err => {
+          alert(err.message);})
+    }
   }
 }
 </script>
