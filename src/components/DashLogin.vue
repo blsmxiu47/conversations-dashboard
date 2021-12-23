@@ -9,9 +9,16 @@
       <h3 class="text-xl font-medium text-gray-900 dark:text-white">
         Sign in to your dashboard
       </h3>
-      <button class="relative mt-6 border rounded-md py-2 text-sm text-gray-800 bg-gray-100 hover:bg-gray-200">
-        <span class="absolute left-0 top-0 flex items-center justify-center h-full w-10 text-blue-500"><i class="fab fa-google-f" /></span>
-      </button>
+      <div class="text-xl flex flex-wrap justify-center">
+        <button class="h-5 w-5 p-2 inline-flex items-center space-x-2 rounded">
+          <Icon color="#E34133"
+          icon="ant-design:google-square-filled" />
+        </button>
+        <button class="h-5 w-5 p-2 inline-flex items-center space-x-2 rounded">
+          <Icon class="fill-current" 
+          icon="fa-brands:github-square" />
+        </button>
+      </div>
       <div class="relative mt-10 h-px bg-gray-300">
         <div class="absolute left-0 top-0 flex justify-center w-full -mt-2">
           <span class="bg-white px-4 text-xs text-gray-500 uppercase">Or Login With Email</span>
@@ -94,8 +101,12 @@
 <script>
 import { auth } from "../service/firebase.js";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { Icon } from '@iconify/vue';
 export default {
   name: "Login",
+  components: {
+    Icon
+  },
   data() {
     return {
       email: "",
