@@ -10,13 +10,27 @@
         Sign in to your dashboard
       </h3>
       <div class="text-xl flex flex-wrap justify-center">
-        <button class="h-5 w-5 p-2 inline-flex items-center space-x-2 rounded">
-          <Icon color="#E34133"
-          icon="ant-design:google-square-filled" />
+        <button class="p-2 inline-flex items-center space-x-2 rounded">
+          <span
+            aria-label="Sign in with Google"
+            title="Sign in with Google"
+          >
+            <Icon 
+              color="#E34133"
+              icon="ant-design:google-square-filled"
+            />
+          </span>
         </button>
-        <button class="h-5 w-5 p-2 inline-flex items-center space-x-2 rounded">
-          <Icon class="fill-current" 
-          icon="fa-brands:github-square" />
+        <button class="p-2 inline-flex items-center space-x-2 rounded">
+          <span
+            aria-label="Sign in with GitHub"
+            title="Sign in with GitHub"
+          >
+            <Icon 
+              class="fill-current" 
+              icon="fa-brands:github-square"
+            />
+          </span>
         </button>
       </div>
       <div class="relative mt-10 h-px bg-gray-300">
