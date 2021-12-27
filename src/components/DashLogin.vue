@@ -113,25 +113,25 @@
 </template>
 
 <script>
-import { auth } from "../service/firebase.js";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../service/firebase.js';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Icon } from '@iconify/vue';
 export default {
-  name: "Login",
+  name: 'Login',
   components: {
     Icon
   },
   data() {
     return {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     };
   },
   methods: {
     login: function () {
       signInWithEmailAndPassword(auth, this.email, this.password)
         .then(() => {
-          this.$router.replace("home");
+          this.$router.replace('home');
         })
         .catch((err) => {
           alert(err.message);
