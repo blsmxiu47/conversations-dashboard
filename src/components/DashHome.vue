@@ -1,12 +1,12 @@
 <template>
-  <div class="flex h-screen">
+  <div class="flex h-screen overflow-hidden">
     <Sidebar
       :sidebar-open="sidebarOpen"
       @close-sidebar="sidebarOpen = false"
     />
     
     <!-- Content -->
-    <div class="relative flex flex-col flex-1">
+    <div class="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
       <Header
         :sidebar-open="sidebarOpen"
         @toggle-sidebar="sidebarOpen = !sidebarOpen"
