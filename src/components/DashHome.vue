@@ -1,16 +1,37 @@
 <template>
-  <div class="home">
+  <div class="flex h-screen">
     <Sidebar
       :sidebar-open="sidebarOpen"
       @close-sidebar="sidebarOpen = false"
     />
-    <Header
-      :sidebar-open="sidebarOpen"
-      @toggle-sidebar="sidebarOpen = !sidebarOpen"
-    />
-    <button @click="logout">
-      Sign Out
-    </button>
+    
+    <!-- Content -->
+    <div class="relative flex flex-col flex-1">
+      <Header
+        :sidebar-open="sidebarOpen"
+        @toggle-sidebar="sidebarOpen = !sidebarOpen"
+      />
+      <!-- Tiles -->
+      <main>
+        <div class="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
+          <div class="grid grid-cols-12 gap-6">
+            <!-- Placeholder -->
+            <PlaceholderCard />
+
+            <PlaceholderCard />
+
+            <PlaceholderCard />
+            <!-- Summary/Mentions -->
+
+            <!-- Sentiment -->
+
+            <!-- Topics -->
+
+            <!-- etc... -->
+          </div>
+        </div>
+      </main>
+    </div>
   </div>
 </template>
 
@@ -20,12 +41,14 @@ import { auth } from '../service/firebase.js';
 import { signOut } from 'firebase/auth';
 import Sidebar from '../partials/Sidebar.vue';
 import Header from '../partials/Header.vue';
+import PlaceholderCard from '../partials/dashboard/PlaceholderCard.vue';
 
 export default {
   name: 'DashHome',
   components: {
     Sidebar,
-    Header
+    Header,
+    PlaceholderCard
   },
   setup() {
     const sidebarOpen = ref(false)
