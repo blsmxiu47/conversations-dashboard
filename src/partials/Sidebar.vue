@@ -39,9 +39,13 @@
       <!-- Links -->
       <div>
         <ul>
-          <router-link to="/">
+          <router-link 
+          to="/home"
+          custom
+          v-slot="{ href , navigate }"
+          >
             <li class="px-4 py-4 mb-2">
-              <a class="text-gray-300 hover:text-white">
+              <a class="text-gray-300 hover:text-white" :href="href" @click="navigate">
                 <!-- Nav item / icon -->
                 <div class="flex items-center">
                   <Icon icon="bx:bx-home" />
@@ -50,9 +54,13 @@
               </a>
             </li>
           </router-link>
-          <router-link to="/">
+          <router-link 
+          to="/settings"
+          custom
+          v-slot="{ href , navigate }"
+          >
             <li class="px-4 py-4 mb-2">
-              <a class="text-gray-300 hover:text-white">
+              <a class="text-gray-300 hover:text-white" :href="href" @click="navigate">
                 <!-- Nav item / icon -->
                 <div class="flex items-center">
                   <Icon icon="ci:settings" />
@@ -61,9 +69,13 @@
               </a>
             </li>
           </router-link>
-          <router-link to="/">
+          <router-link
+          to="/edit-query"
+          custom
+          v-slot="{ href , navigate }"
+          >
             <li class="px-4 py-4 mb-2">
-              <a class="text-gray-300 hover:text-white">
+              <a class="text-gray-300 hover:text-white" :href="href" @click="navigate">
                 <!-- Nav item / icon -->
                 <div class="flex items-center">
                   <Icon icon="bx:bx-edit" />
@@ -72,9 +84,13 @@
               </a>
             </li>
           </router-link>
-          <router-link to="/">
+          <router-link
+          to="/about"
+          custom
+          v-slot="{ href , navigate }"
+          >
             <li class="px-4 py-4 mb-2">
-              <a class="text-gray-300 hover:text-white">
+              <a class="text-gray-300 hover:text-white" :href="href" @click="navigate">
                 <!-- Nav item / icon -->
                 <div class="flex items-center">
                   <Icon icon="bx:bx-info-circle" />
