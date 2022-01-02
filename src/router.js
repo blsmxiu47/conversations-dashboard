@@ -30,6 +30,30 @@ const routes = [
     name: "UserRegistration",
     component: UserRegistration,
   },
+  {
+    path: "/settings",
+    name: "DashSettings",
+    component: DashSettings,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/edit-query",
+    name: "EditQuery",
+    component: EditQuery,
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/about",
+    name: "ConversationsAbout",
+    component: ConversationsAbout,
+    meta: {
+      requiresAuth: true,
+    },
+  },
 ];
 
 const router = createRouter({
