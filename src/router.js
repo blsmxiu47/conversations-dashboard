@@ -2,6 +2,9 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import DashLogin from "./components/DashLogin";
 import DashHome from "./components/DashHome";
 import UserRegistration from "./components/UserRegistration";
+import DashSettings from "./components/DashSettings";
+import EditQuery from "./components/EditQuery";
+import ConversationsAbout from "./components/ConversationsAbout";
 
 const routes = [
   {
