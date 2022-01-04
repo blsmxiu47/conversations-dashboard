@@ -27,12 +27,26 @@
           <Icon icon="akar-icons:chevron-left" />
         </button>
         <router-link 
-        to="/home"
+          to="/home"
         >
           <!-- App logo -->
-          <svg width="48" height="48" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-            <path d="m32.523 38.981-.132.043.032.135 1.988 8.349-7.163-7.333-.051-.052-.073.008A28.54 28.54 0 0 1 24 40.3c-13.197 0-23.85-9.01-23.85-20.075S10.803.15 24 .15c13.197 0 23.85 9.011 23.85 20.076 0 8.546-6.35 15.863-15.327 18.755Z" fill="#fff" stroke="#000" stroke-width=".3"/>
-            <path d="M3.137 20.806H15.66l.642-1.354 1.204 2.322 1.284-3.29 1.445 8.322L21.68 8.42l.883 14.517 1.124-3.484.802 2.903 1.365-1.549h19.103" stroke="#000" stroke-width=".3"/>
+          <svg
+            width="48"
+            height="48"
+            viewbox="0 0 48 48"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="m32.523 38.981-.132.043.032.135 1.988 8.349-7.163-7.333-.051-.052-.073.008A28.54 28.54 0 0 1 24 40.3c-13.197 0-23.85-9.01-23.85-20.075S10.803.15 24 .15c13.197 0 23.85 9.011 23.85 20.076 0 8.546-6.35 15.863-15.327 18.755Z"
+              fill="#fff"
+              stroke="#000"
+              stroke-width=".3"
+            />
+            <path
+              d="M3.137 20.806H15.66l.642-1.354 1.204 2.322 1.284-3.29 1.445 8.322L21.68 8.42l.883 14.517 1.124-3.484.802 2.903 1.365-1.549h19.103"
+              stroke="#000"
+              stroke-width=".3"
+            />
           </svg>
         </router-link>
       </div>
@@ -40,12 +54,16 @@
       <div>
         <ul>
           <router-link 
-          to="/home"
-          custom
-          v-slot="{ href , navigate }"
+            v-slot="{ href , navigate }"
+            to="/home"
+            custom
           >
             <li class="px-4 py-4 mb-2">
-              <a class="text-gray-300 hover:text-white" :href="href" @click="navigate">
+              <a
+                class="text-gray-300 hover:text-white"
+                :href="href"
+                @click="navigate"
+              >
                 <!-- Nav item / icon -->
                 <div class="flex items-center">
                   <Icon icon="bx:bx-home" />
@@ -55,12 +73,16 @@
             </li>
           </router-link>
           <router-link 
-          to="/settings"
-          custom
-          v-slot="{ href , navigate }"
+            v-slot="{ href , navigate }"
+            to="/settings"
+            custom
           >
             <li class="px-4 py-4 mb-2">
-              <a class="text-gray-300 hover:text-white" :href="href" @click="navigate">
+              <a
+                class="text-gray-300 hover:text-white"
+                :href="href"
+                @click="navigate"
+              >
                 <!-- Nav item / icon -->
                 <div class="flex items-center">
                   <Icon icon="ci:settings" />
@@ -70,12 +92,16 @@
             </li>
           </router-link>
           <router-link
-          to="/edit-query"
-          custom
-          v-slot="{ href , navigate }"
+            v-slot="{ href , navigate }"
+            to="/edit-query"
+            custom
           >
             <li class="px-4 py-4 mb-2">
-              <a class="text-gray-300 hover:text-white" :href="href" @click="navigate">
+              <a
+                class="text-gray-300 hover:text-white"
+                :href="href"
+                @click="navigate"
+              >
                 <!-- Nav item / icon -->
                 <div class="flex items-center">
                   <Icon icon="bx:bx-edit" />
@@ -85,12 +111,16 @@
             </li>
           </router-link>
           <router-link
-          to="/about"
-          custom
-          v-slot="{ href , navigate }"
+            v-slot="{ href , navigate }"
+            to="/about"
+            custom
           >
             <li class="px-4 py-4 mb-2">
-              <a class="text-gray-300 hover:text-white" :href="href" @click="navigate">
+              <a
+                class="text-gray-300 hover:text-white"
+                :href="href"
+                @click="navigate"
+              >
                 <!-- Nav item / icon -->
                 <div class="flex items-center">
                   <Icon icon="bx:bx-info-circle" />
