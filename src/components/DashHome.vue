@@ -52,8 +52,6 @@ export default {
   },
   setup() {
     const sidebarOpen = ref(false)
-    console.log("sidebarOpen:", sidebarOpen)
-
     return {
       sidebarOpen,
     }
