@@ -1,17 +1,23 @@
 <template>
   <div class="flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white shadow-lg rounded-sm border border-gray-200">
     <h2>Mentions</h2>
-    <p v-if="error">{{ error }}</p>
+    <p v-if="error">
+      {{ error }}
+    </p>
     <div class="container">
-        <div
+      <div
         v-for="(mention, index) in mentions"
-        v-bind:item="mention"
-        v-bind:index="index"
-        v-bind:key="mention._id"
-        >
-        {{ `${mention.time.getFullYear()}-${mention.time.getMonth()}-${mention.time.getDate()}` }}
-        <p>{{ mention.content.slice(1, 20) }}</p>
-        </div>
+        :key="mention._id"
+        :item="mention"
+        :index="index"
+      >
+        {{ `
+            ${mention.time.getFullYear()}-
+            ${('0' + (mention.time.getMonth() + 1)).slice(-2)}-
+            ${('0' + (mention.time.getDate() + 1)).slice(-2)}
+        ` }}
+        <!-- <p>{{ mention.content.slice(1, 20) }}...</p> -->
+      </div>
     </div>
   </div>
 </template>

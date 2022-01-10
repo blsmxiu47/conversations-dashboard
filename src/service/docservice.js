@@ -11,7 +11,7 @@ class DocService {
                 resolve(
                     data.map(doc => ({
                         ...doc,
-                        time: new Date(doc.time)
+                        time: new Date(doc.time),
                     }))
                 );
             } catch(err) {
