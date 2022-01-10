@@ -1,4 +1,4 @@
-import axios from axios;
+import axios from 'axios';
 
 const url = 'http://localhost:5000/api/docs/';
 
@@ -11,7 +11,7 @@ class DocService {
                 resolve(
                     data.map(doc => ({
                         ...doc,
-                        createdAt: new Date(doc.createdAt)
+                        time: new Date(doc.time)
                     }))
                 );
             } catch(err) {
