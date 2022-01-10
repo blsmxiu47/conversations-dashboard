@@ -16,7 +16,7 @@
         <div class="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
           <div class="grid grid-cols-12 gap-6">
             <!-- Placeholder -->
-            <PlaceholderCard />
+            <MentionsCard />
 
             <PlaceholderCard />
 
@@ -41,6 +41,7 @@ import { auth } from '../service/firebase.js';
 import { signOut } from 'firebase/auth';
 import Sidebar from '../partials/Sidebar.vue';
 import Header from '../partials/Header.vue';
+import MentionsCard from '../partials/dashboard/MentionsCard.vue'
 import PlaceholderCard from '../partials/dashboard/PlaceholderCard.vue';
 
 export default {
@@ -48,6 +49,7 @@ export default {
   components: {
     Sidebar,
     Header,
+    MentionsCard,
     PlaceholderCard
   },
   setup() {
