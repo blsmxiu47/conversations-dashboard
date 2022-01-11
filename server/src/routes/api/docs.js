@@ -8,10 +8,27 @@ const { MongoClient } = require('mongodb');
 
 const router = express.Router();
 
+// for reference, for now
+// const validQueryFields = [
+//     '_id',
+//     'title',
+//     'source',
+//     'time',
+//     'content_url',
+//     'content'
+// ];
+
 // Get Docs
 router.get('/', async (req, res) => {
+    const filters = req.query;
+    // console.log(filters);
     const docs = await loadDocs().catch(console.error);
-    res.send(await docs.find({}).toArray());
+    const filteredDocs = await docs.find({
+        time: {
+            $gte: filters.start_date
+        }
+    }).toArray()
+    res.send(filteredDocs);
 });
 
 async function loadDocs() {

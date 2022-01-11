@@ -11,11 +11,7 @@
         :item="mention"
         :index="index"
       >
-        {{ `
-            ${mention.time.getFullYear()}-
-            ${('0' + (mention.time.getMonth() + 1)).slice(-2)}-
-            ${('0' + (mention.time.getDate() + 1)).slice(-2)}
-        ` }}
+        {{ `${mention.time.getFullYear()}-${('0' + (mention.time.getMonth() + 1)).slice(-2)}-${('0' + (mention.time.getDate() + 1)).slice(-2)}` }}
         <!-- <p>{{ mention.content.slice(1, 20) }}...</p> -->
       </div>
     </div>
@@ -34,7 +30,11 @@ export default {
     },
     async created () {
         try {
-            this.mentions = await DocService.getDocs()
+            this.mentions = await DocService.getDocs(
+              // past 14 days (to the millisecond)
+              new Date(
+                new Date().setDate(
+                  new Date().getDate() - 14)))
         } catch(err) {
             this.error = err.message
         }
